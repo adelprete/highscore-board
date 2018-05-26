@@ -1,0 +1,203 @@
+@font-face {
+  font-family: 'Pacman';
+  src: url('emulogic.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}  
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Pacman;
+  background-color: #000000;
+}
+
+.row {
+  justify-content: space-around;
+  display: flex; /* or inline-flex */
+}
+
+.row-cell-1 {
+  flex: 1;
+}
+
+.row-cell-2 {
+  flex: 2;
+}
+
+.row-cell-3 {
+  flex: 3;
+}
+
+.header {
+  color: #04fcdc;
+  font-size: 30px;
+  margin-top: 200px;
+}
+
+label {
+  color: #ffffff;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input {
+  font-size: 16px;
+  color: #ffffff;
+  font-family: Pacman;
+  border: None;
+  background-color: #000000;
+}
+
+input:focus {
+  outline: none;
+}
+
+input#score {
+  width: 120px;
+}
+
+input#name {
+  width: 50px;
+}
+
+input#submit {
+  padding: 1px 7px 2px 0px;
+}
+
+form {
+  flex: 1;
+}
+
+form div {
+  margin-left: 15px;
+}
+
+/***  TABLE  ***/
+table {
+  display: flex;
+  margin: 30px 0px 0px 0px;
+}
+
+th {
+  color: #fcfc04
+}
+
+.th-left {
+  text-align: left;
+}
+
+.th-middle {
+  text-align: right;
+}
+
+.th-right {
+  text-align: right;
+}
+
+tr {
+  padding-top: 30px;
+}
+
+.td-left {
+  padding: 5px 50px 0px 0px;
+  text-align: left;
+}
+
+.td-middle {
+  padding: 5px 0px 0px 50px;
+  text-align: center;
+}
+
+.td-right {
+  padding: 5px 0px 0px 100px;
+  text-align: right;
+}
+
+tr:nth-child(10n + 2) {
+  color: #dcdcdc;
+}
+
+tr:nth-child(10n + 3) {
+  color: #fc0404;
+}
+
+tr:nth-child(10n + 4) {
+  color: #fcb444;
+}
+
+tr:nth-child(10n + 5) {
+  color: #fcb494;
+}
+
+tr:nth-child(10n + 6) {
+  color: #f4cc34;
+}
+
+tr:nth-child(10n + 7) {
+  color: #fcfc04;
+}
+
+tr:nth-child(10n + 8) {
+  color: #14b42c;
+}
+
+tr:nth-child(10n + 9) {
+  color: #04fcdc;
+}
+
+tr:nth-child(10n + 10) {
+  color: #149cb4;
+}
+
+tr:nth-child(10n + 11) {
+  color: #0cd424;
+}
+
+
+/*** END TABLE ***/
+
+@media screen and (max-width: 400px) {
+  .row {
+    flex-direction: column;
+  }
+  
+  .header {
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+  
+  table {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .th-middle {
+    text-align: center;
+  }
+  
+  .td-left {
+    padding: 0px;
+    width: 30%;
+    text-align: left;
+  }
+  
+  .td-middle {
+    padding: 0px;
+    width: 30%;
+    text-align: right;
+  }
+  
+  .td-right {
+    padding: 0px;
+    width: 30%;
+    text-align: right;
+  }
+}
+
+
