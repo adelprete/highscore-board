@@ -81,6 +81,7 @@ form div {
 /***  TABLE  ***/
 table {
   display: flex;
+  font-size: 20px;
   margin: 30px 0px 0px 0px;
 }
 
@@ -105,17 +106,17 @@ tr {
 }
 
 .td-left {
-  padding: 5px 50px 0px 0px;
+  padding: 5px 80px 0px 0px;
   text-align: left;
 }
 
 .td-middle {
-  padding: 5px 0px 0px 50px;
+  padding: 5px 0px 0px 80px;
   text-align: center;
 }
 
 .td-right {
-  padding: 5px 0px 0px 100px;
+  padding: 5px 0px 0px 160px;
   text-align: right;
 }
 
@@ -173,6 +174,7 @@ tr:nth-child(10n + 11) {
   }
   
   table {
+    font-size: 18px;
     padding-left: 15px;
     padding-right: 15px;
   }

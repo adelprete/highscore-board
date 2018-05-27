@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import fire from './fire';
 import './App.css';
 
 class ScoreForm extends Component {
@@ -100,6 +101,27 @@ class ScoreForm extends Component {
 }
 
 class Table extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      'scores': []
+    }
+  }
+  
+  componentDidMount () {
+    const scoresRef = fire.database().ref('scores').orderByChild('score');
+    scoresRef.on('value', (snapshot) => {
+      var data = [];
+      snapshot.forEach(ss => {
+         data.push(ss.val());
+      });
+      this.setState({
+        'scores': data.sort((a, b) => parseInt(a.score) < parseInt(b.score))
+      })
+    });
+  }
+  
   render () {
     
     function rankFormat(index) {
@@ -117,8 +139,7 @@ class Table extends Component {
       }
     }
     
-    const boardRows = this.props.scores
-      .sort((a, b) => a.score < b.score)
+    const boardRows = this.state.scores
       .map((score, index) =>
         <tr key={index}>
           <td className="td-left">{index+1}{rankFormat(index)}</td>
@@ -158,9 +179,8 @@ class Leaderboard extends Component {
   }
   
   onNewScore(score) {
-    this.setState(prevState => ({
-      scores: [...prevState.scores, score]
-    }))
+    const scoresRef = fire.database().ref('scores');
+    scoresRef.push(score);
   }
   
   render() {
