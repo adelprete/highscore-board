@@ -110,7 +110,7 @@ class Table extends Component {
   }
   
   componentDidMount () {
-    const scoresRef = fire.database().ref('scores').orderByChild('score');
+    const scoresRef = fire.database().ref('scores');
     scoresRef.on('value', (snapshot) => {
       var data = [];
       snapshot.forEach(ss => {
